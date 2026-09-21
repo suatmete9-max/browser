@@ -2,15 +2,14 @@ const express = require('express');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 const cors = require('cors');
 const { HttpsProxyAgent } = require('https-proxy-agent');
-const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 
-// 🌐 WEBSHARE PROXIES CONFIGURATION
+// 🌐 UPDATED WEBSHARE PROXIES (10 IPs from your latest screenshot)
 const proxyUsername = 'jwcmtnyz';
 const proxyPassword = '98niktp7dq3g';
 const auth = `${proxyUsername}:${proxyPassword}`;
@@ -28,6 +27,7 @@ const allProxies = {
     'DE1': `http://${auth}@31.58.9.4:6077`
 };
 
+// Grouped for manual selection (Multiple IPs per country where available)
 const countryProxies = {
     'US': [allProxies['US1'], allProxies['US2'], allProxies['US3']],
     'UK': [allProxies['UK1'], allProxies['UK2'], allProxies['UK3']],
@@ -45,17 +45,20 @@ app.use('/proxy', (req, res, next) => {
 
     let selectedProxyUrl = null;
 
+    // 🎲 AUTO RANDOM LOGIC
     if (requestedCountry === 'AUTO') {
         const proxyKeys = Object.keys(allProxies);
         const randomKey = proxyKeys[Math.floor(Math.random() * proxyKeys.length)];
         selectedProxyUrl = allProxies[randomKey];
-    } else if (countryProxies[requestedCountry]) {
+        console.log(`✨ AUTO Mode: Randomly assigned proxy [${randomKey}] for ${targetUrl}`);
+    } 
+    // 🌍 MANUAL SELECTION LOGIC
+    else if (countryProxies[requestedCountry]) {
         const arr = countryProxies[requestedCountry];
         selectedProxyUrl = arr[Math.floor(Math.random() * arr.length)];
-    } else if (allProxies[requestedCountry]) {
-        selectedProxyUrl = allProxies[requestedCountry];
+        console.log(`🌍 Manual Mode: Assigned ${requestedCountry} proxy for ${targetUrl}`);
     } else {
-        selectedProxyUrl = allProxies['US1'];
+        selectedProxyUrl = allProxies['US1']; // Fallback
     }
 
     const proxyAgent = new HttpsProxyAgent(selectedProxyUrl);
@@ -85,11 +88,6 @@ app.use('/proxy', (req, res, next) => {
             res.status(500).send(`Error from Proxy: ${err.message}`);
         }
     })(req, res, next);
-});
-
-// 🛡️ FIX 404: Catch-all route to serve index.html for any unhandled path
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(PORT, () => {
