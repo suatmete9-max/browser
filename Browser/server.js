@@ -4,7 +4,7 @@ const cors = require('cors');
 const { HttpsProxyAgent } = require('https-proxy-agent');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.static('public'));
@@ -91,5 +91,5 @@ app.use('/proxy', (req, res, next) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`🚀 Pro Proxy Server with AUTO mode running at http://localhost:${PORT}`);
+    console.log(`🚀 Pro Proxy Server with AUTO mode running on port ${PORT}`);
 });
