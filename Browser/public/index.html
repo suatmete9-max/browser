@@ -58,14 +58,19 @@
                     </div>
                 </div>
 
+                <!-- Updated Dropdown with Country Names and Multiple IP Labels -->
                 <select id="countrySelect" class="bg-gray-800 border border-gray-700 text-white rounded-xl focus:ring-purple-500 focus:border-purple-500 block px-4 outline-none cursor-pointer hover:bg-gray-700 transition">
                     <option value="AUTO" selected>✨ Auto (Random Location)</option>
-                    <option value="US">🇺🇸 United States</option>
-                    <option value="UK">🇬🇧 United Kingdom</option>
-                    <option value="DE">🇩🇪 Germany</option>
-                    <option value="ES">🇪🇸 Spain</option>
-                    <option value="JP">🇯🇵 Japan</option>
-                    <option value="PL">🇵🇱 Poland</option>
+                    <option value="UK1">🇬🇧 United Kingdom</option>
+                    <option value="UK2">🇬🇧 United Kingdom (UK 2)</option>
+                    <option value="UK3">🇬🇧 United Kingdom (UK 3)</option>
+                    <option value="US1">🇺🇸 United States</option>
+                    <option value="US2">🇺🇸 United States (US 2)</option>
+                    <option value="US3">🇺🇸 United States (US 3)</option>
+                    <option value="DE1">🇩🇪 Germany</option>
+                    <option value="ES1">🇪🇸 Spain</option>
+                    <option value="JP1">🇯🇵 Japan</option>
+                    <option value="PL1">🇵🇱 Poland</option>
                 </select>
 
                 <button id="browseBtn" class="text-white bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 font-semibold rounded-xl px-8 py-3 transition-all shadow-[0_0_15px_rgba(147,51,234,0.4)] active:scale-95 flex-shrink-0">
@@ -75,7 +80,6 @@
         </div>
     </header>
 
-    <!-- Modal jo ab automatic kaam karega -->
     <div id="customModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity opacity-0">
         <div class="bg-gray-900 border border-gray-800 rounded-2xl shadow-2xl p-8 w-full max-w-md transform scale-95 transition-transform duration-200" id="modalContent">
             
@@ -98,7 +102,7 @@
                 </div>
             </div>
             <h2 class="text-3xl font-bold text-white tracking-wide">Secure Sandbox</h2>
-            <p class="text-gray-500 mt-3 max-w-md text-center">Fully automatic routing active. All internal links will stay securely sandboxed.</p>
+            <p class="text-gray-500 mt-3 max-w-md text-center">Choose specific country nodes or use Auto mode for dynamic routing.</p>
         </div>
 
         <iframe id="browserFrame" sandbox="allow-scripts allow-same-origin allow-forms" class="w-full h-full border-none hidden z-10 bg-white" src="about:blank"></iframe>
@@ -125,16 +129,14 @@
                 return formattedUrl;
             }
 
-            // 🚀 AUTOMATIC CONNECTION FUNCTION (No manual OK button required)
             function executeProxyConnection(targetUrl) {
                 const formattedUrl = formatUrl(targetUrl);
-                const countryVal = countrySelect.value;
-                const countryText = countrySelect.options[countrySelect.selectedIndex].text.replace(/[\uD83C][\uDDE6-\uDDFF][\uD83C][\uDDE6-\uDDFF]\s|✨\s/g, '');
+                const proxyChoice = countrySelect.value;
+                const choiceText = countrySelect.options[countrySelect.selectedIndex].text.replace(/[\uD83C][\uDDE6-\uDDFF][\uD83C][\uDDE6-\uDDFF]\s|✨\s/g, '');
 
                 urlInput.value = formattedUrl;
-                modalMessage.innerHTML = `Target: <span class="text-white">${formattedUrl}</span><br>Mode: <span class="text-purple-400">${countryText}</span><br><br><span class="text-green-400 text-xs">⚡ Auto-routing...</span>`;
+                modalMessage.innerHTML = `Target: <span class="text-white">${formattedUrl}</span><br>Location: <span class="text-purple-400">${choiceText}</span><br><br><span class="text-green-400 text-xs">⚡ Routing securely...</span>`;
                 
-                // Show modal quickly
                 customModal.classList.remove('hidden');
                 setTimeout(() => {
                     customModal.classList.remove('opacity-0');
@@ -142,7 +144,6 @@
                     modalContent.classList.add('scale-100');
                 }, 10);
 
-                // Automatically hide modal and load inside iframe after a split second
                 setTimeout(() => {
                     customModal.classList.add('opacity-0');
                     modalContent.classList.remove('scale-100');
@@ -152,8 +153,7 @@
                         customModal.classList.add('hidden');
                         splashScreen.classList.add('hidden');
                         browserFrame.classList.remove('hidden');
-                        // Load through backend proxy
-                        browserFrame.src = '/proxy?url=' + encodeURIComponent(formattedUrl) + '&country=' + countryVal;
+                        browserFrame.src = '/proxy?url=' + encodeURIComponent(formattedUrl) + '&country=' + proxyChoice;
                     }, 150);
                 }, 600);
             }
@@ -168,14 +168,12 @@
                 if (e.key === 'Enter') browseBtn.click();
             });
 
-            // 🔗 AUTOMATIC LINK CAPTURE FROM INSIDE IFRAME
             window.addEventListener('message', (e) => {
                 if (e.data && e.data.type === 'nexus_route') {
-                    executeProxyConnection(e.data.url); // Automatically route internal clicks!
+                    executeProxyConnection(e.data.url);
                 }
             });
 
-            // Intercept iframe clicks
             browserFrame.addEventListener('load', () => {
                 try {
                     const iframeDoc = browserFrame.contentDocument || browserFrame.contentWindow.document;
@@ -202,7 +200,6 @@
                                 }
                             }
 
-                            // Send signal to parent to load automatically
                             window.parent.postMessage({ type: 'nexus_route', url: finalUrl }, '*');
                         }
                     });
