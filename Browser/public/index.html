@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus | Premium Proxy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, transparent 70%);
+        }
+
+        /* GEMINI GLOWING ANIMATION EFFECT */
+        .gemini-glow-wrapper {
+            position: relative;
+            border-radius: 0.75rem;
+            padding: 2px; /* Border thickness */
+            background: linear-gradient(90deg, #4285f4, #9b72cb, #d96570, #fbbc05, #4285f4);
+            background-size: 200% auto;
+            animation: geminiShine 3s linear infinite;
+            box-shadow: 0 0 20px rgba(155, 114, 203, 0.3);
+        }
+
+        @keyframes geminiShine {
+            to { background-position: 200% center; }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+<body class="text-gray-200 h-screen w-screen flex flex-col overflow-hidden">
+
+    <!-- Premium Glassmorphism Header -->
+    <header class="bg-gray-900/80 backdrop-blur-md border-b border-gray-800 shadow-2xl flex-none z-20">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
+            
+            <!-- Branding -->
+            <div class="flex items-center space-x-3 w-full md:w-auto">
+                <div class="bg-gradient-to-tr from-blue-500 to-purple-500 p-2 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
+                    </svg>
+                </div>
+                <span class="font-bold text-2xl tracking-tight text-white">NEXUS<span class="text-purple-400">PROXY</span></span>
+            </div>
+
+            <!-- Glowing Input Wrapper -->
+            <div class="flex w-full md:w-auto flex-1 max-w-4xl space-x-3">
+                <div class="gemini-glow-wrapper flex-1 flex rounded-xl">
+                    <div class="flex w-full bg-gray-900 rounded-xl overflow-hidden items-center">
+                        <div class="pl-4 text-gray-400">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                        </div>
+                        <input type="text" id="urlInput" class="w-full p-3 bg-transparent border-none text-white focus:ring-0 outline-none placeholder-gray-500" placeholder="Enter target URL (e.g., https://api.ipify.org)" value="https://api.ipify.org">
+                    </div>
+                </div>
+
+                <!-- Professional Dropdown -->
+                <select id="countrySelect" class="bg-gray-800 border border-gray-700 text-white rounded-xl focus:ring-purple-500 focus:border-purple-500 block px-4 outline-none cursor-pointer hover:bg-gray-700 transition">
+                    <option value="AUTO" selected>✨ Auto (Random Location)</option>
+                    <option value="US">🇺🇸 United States</option>
+                    <option value="UK">🇬🇧 United Kingdom</option>
+                    <option value="DE">🇩🇪 Germany</option>
+                    <option value="ES">🇪🇸 Spain</option>
+                    <option value="JP">🇯🇵 Japan</option>
+                    <option value="PL">🇵🇱 Poland</option>
+                </select>
+
+                <!-- Premium Button -->
+                <button id="browseBtn" class="text-white bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 font-semibold rounded-xl px-8 py-3 transition-all shadow-[0_0_15px_rgba(147,51,234,0.4)] active:scale-95 flex-shrink-0">
+                    Connect
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Professional Modal -->
+    <div id="customModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity opacity-0">
+        <div class="bg-gray-900 border border-gray-800 rounded-2xl shadow-2xl p-8 w-full max-w-md transform scale-95 transition-transform duration-200" id="modalContent">
+            
+            <div class="flex items-center space-x-4 mb-6">
+                <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-500"></div>
+                <h3 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">Establishing Secure Link</h3>
+            </div>
+            
+            <div id="modalMessage" class="text-gray-400 text-sm mb-8 bg-gray-800/50 p-4 rounded-lg border border-gray-700 font-mono">
+                Initializing connection...
+            </div>
+            
+            <button id="modalOkBtn" class="w-full bg-white text-gray-900 hover:bg-gray-200 font-bold py-3 px-6 rounded-xl transition-colors outline-none shadow-lg">
+                Proceed to Destination
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Browser Area -->
+    <main class="flex-grow flex flex-col relative w-full bg-[#f8fafc]">
+        <!-- Splash Screen -->
+        <div id="splashScreen" class="absolute inset-0 flex flex-col items-center justify-center bg-gray-900 z-0">
+            <div class="gemini-glow-wrapper rounded-full p-1 mb-6 opacity-80">
+                <div class="bg-gray-900 rounded-full p-6">
+                    <svg class="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8V7a4 4 0 00-8 0v4h8z"></path></svg>
+                </div>
+            </div>
+            <h2 class="text-3xl font-bold text-white tracking-wide">Secure Sandbox</h2>
+            <p class="text-gray-500 mt-3 max-w-md text-center">Your traffic will be encrypted and routed through our premium proxy network. Select "Auto" for dynamic assignment.</p>
+        </div>
+
+        <iframe id="browserFrame" class="w-full h-full border-none hidden z-10 bg-white" src="about:blank"></iframe>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlInput = document.getElementById('urlInput');
+            const countrySelect = document.getElementById('countrySelect');
+            const browseBtn = document.getElementById('browseBtn');
+            const browserFrame = document.getElementById('browserFrame');
+            const splashScreen = document.getElementById('splashScreen');
+            
+            const customModal = document.getElementById('customModal');
+            const modalContent = document.getElementById('modalContent');
+            const modalMessage = document.getElementById('modalMessage');
+            const modalOkBtn = document.getElementById('modalOkBtn');
+
+            function formatUrl(url) {
+                let formattedUrl = url.trim();
+                if (!formattedUrl) return '';
+                if (!/^https?:\/\//i.test(formattedUrl)) {
+                    formattedUrl = 'https://' + formattedUrl;
+                }
+                return formattedUrl;
+            }
+
+            function showModal(url, countryVal, countryText) {
+                let modeText = countryVal === 'AUTO' 
+                    ? `<span class="text-purple-400 font-bold">Auto (Random IP)</span>` 
+                    : `<span class="text-blue-400 font-bold">${countryText}</span>`;
+                
+                modalMessage.innerHTML = `Target: <span class="text-white">${url}</span><br>Routing Mode: ${modeText}<br><br><span class="text-green-400 text-xs animate-pulse">● Secure Connection Ready</span>`;
+                
+                customModal.classList.remove('hidden');
+                setTimeout(() => {
+                    customModal.classList.remove('opacity-0');
+                    modalContent.classList.remove('scale-95');
+                    modalContent.classList.add('scale-100');
+                }, 10);
+            }
+
+            function proceedToWebsite() {
+                customModal.classList.add('opacity-0');
+                modalContent.classList.remove('scale-100');
+                modalContent.classList.add('scale-95');
+                
+                setTimeout(() => {
+                    customModal.classList.add('hidden');
+                    
+                    const finalUrl = formatUrl(urlInput.value);
+                    const selectedCountry = countrySelect.value;
+                    
+                    if (finalUrl) {
+                        splashScreen.classList.add('hidden');
+                        browserFrame.classList.remove('hidden');
+                        browserFrame.src = '/proxy?url=' + encodeURIComponent(finalUrl) + '&country=' + selectedCountry;
+                    }
+                }, 200); 
+            }
+
+            browseBtn.addEventListener('click', () => {
+                const url = urlInput.value.trim();
+                if (!url) {
+                    urlInput.parentElement.classList.add('ring-2', 'ring-red-500');
+                    setTimeout(() => urlInput.parentElement.classList.remove('ring-2', 'ring-red-500'), 500);
+                    return;
+                }
+
+                const formattedUrl = formatUrl(url);
+                const countryVal = countrySelect.value;
+                const countryText = countrySelect.options[countrySelect.selectedIndex].text.replace(/[\uD83C][\uDDE6-\uDDFF][\uD83C][\uDDE6-\uDDFF]\s|✨\s/g, '');
+
+                urlInput.value = formattedUrl;
+                showModal(formattedUrl, countryVal, countryText);
+            });
+
+            urlInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') browseBtn.click();
+            });
+
+            modalOkBtn.addEventListener('click', proceedToWebsite);
+        });
+    </script>
+</body>
+</html>
