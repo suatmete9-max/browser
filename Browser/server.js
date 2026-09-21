@@ -9,9 +9,9 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.static('public'));
 
-// 🌐 PREMIUM WEBSHARE PROXIES (10 IPs from your screenshot)
-const proxyUsername = 'wslxdkjt';
-const proxyPassword = 'hmyz7q8wo9aq';
+// 🌐 UPDATED WEBSHARE PROXIES (10 IPs from your latest screenshot)
+const proxyUsername = 'jwcmtnyz';
+const proxyPassword = '98niktp7dq3g';
 const auth = `${proxyUsername}:${proxyPassword}`;
 
 const allProxies = {
@@ -27,7 +27,7 @@ const allProxies = {
     'DE1': `http://${auth}@31.58.9.4:6077`
 };
 
-// Grouped for manual selection
+// Grouped for manual selection (Multiple IPs per country where available)
 const countryProxies = {
     'US': [allProxies['US1'], allProxies['US2'], allProxies['US3']],
     'UK': [allProxies['UK1'], allProxies['UK2'], allProxies['UK3']],
@@ -91,5 +91,5 @@ app.use('/proxy', (req, res, next) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`🚀 Pro Proxy Server with AUTO mode running on port ${PORT}`);
+    console.log(`🚀 Pro Proxy Server running on port ${PORT}`);
 });
