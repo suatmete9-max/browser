@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Nexus | Advanced Proxy & Spoofer</title>
+    <title>Nexus | Advanced Spoofer & Proxy</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -44,7 +44,7 @@
                     </div>
                     <span class="font-bold text-xl tracking-tight text-white">NEXUS<span class="text-purple-400">PROXY</span></span>
                 </div>
-                <span class="text-xs text-purple-300 bg-purple-900/40 px-2.5 py-1 rounded-full border border-purple-700/50">Advanced Fingerprint Spoofer</span>
+                <span class="text-xs text-purple-300 bg-purple-900/40 px-2.5 py-1 rounded-full border border-purple-700/50">Full Fingerprint Spoofer Active</span>
             </div>
 
             <div class="flex flex-col md:flex-row gap-2 w-full">
@@ -54,31 +54,34 @@
                         <div class="pl-3 text-gray-400">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
                         </div>
-                        <input type="text" id="urlInput" class="w-full p-2.5 bg-transparent border-none text-white text-sm focus:ring-0 outline-none placeholder-gray-500" placeholder="Enter target URL (e.g. deviceinfo.me)" value="https://deviceinfo.me">
+                        <input type="text" id="urlInput" class="w-full p-2.5 bg-transparent border-none text-white text-sm focus:ring-0 outline-none placeholder-gray-500" placeholder="Enter target URL..." value="https://deviceinfo.me">
                     </div>
                 </div>
 
                 <div class="flex flex-wrap md:flex-nowrap gap-2 w-full md:w-auto">
-                    <select id="countrySelect" class="bg-gray-800 border border-gray-700 text-white text-xs md:text-sm rounded-xl focus:ring-purple-500 flex-1 md:w-36 py-2.5 px-2 outline-none cursor-pointer">
-                        <option value="AUTO" selected>🌐 Auto Proxy</option>
-                        <option value="UK1">🇬🇧 UK 1</option>
-                        <option value="UK2">🇬🇧 UK 2</option>
-                        <option value="UK3">🇬🇧 UK 3</option>
-                        <option value="US1">🇺🇸 US 1</option>
-                        <option value="US2">🇺🇸 US 2</option>
-                        <option value="US3">🇺🇸 US 3</option>
-                        <option value="DE1">🇩🇪 Germany</option>
-                        <option value="ES1">🇪🇸 Spain</option>
-                        <option value="JP1">🇯🇵 Japan</option>
-                        <option value="PL1">🇵🇱 Poland</option>
+                    <!-- Country Full Names Dropdown -->
+                    <select id="countrySelect" class="bg-gray-800 border border-gray-700 text-white text-xs md:text-sm rounded-xl focus:ring-purple-500 flex-1 md:w-44 py-2.5 px-2 outline-none cursor-pointer">
+                        <option value="AUTO" selected>✨ Auto (Random Location)</option>
+                        <option value="UK1">United Kingdom</option>
+                        <option value="UK2">United Kingdom (UK 2)</option>
+                        <option value="UK3">United Kingdom (UK 3)</option>
+                        <option value="US1">United States</option>
+                        <option value="US2">United States (US 2)</option>
+                        <option value="US3">United States (US 3)</option>
+                        <option value="DE1">Germany</option>
+                        <option value="ES1">Spain</option>
+                        <option value="JP1">Japan</option>
+                        <option value="PL1">Poland</option>
                     </select>
 
-                    <select id="deviceSelect" class="bg-gray-800 border border-gray-700 text-white text-xs md:text-sm rounded-xl focus:ring-purple-500 flex-1 md:w-44 py-2.5 px-2 outline-none cursor-pointer">
+                    <!-- Device Dropdown -->
+                    <select id="deviceSelect" class="bg-gray-800 border border-gray-700 text-white text-xs md:text-sm rounded-xl focus:ring-purple-500 flex-1 md:w-48 py-2.5 px-2 outline-none cursor-pointer">
                         <option value="AUTO" selected>📱 Auto (Random Mix)</option>
                         <option value="iphone15promax">iPhone 15 Pro Max</option>
                         <option value="iphone13">iPhone 13</option>
                         <option value="samsunggalaxys24ultra">Samsung Galaxy S24 Ultra</option>
                         <option value="macbookairm2">MacBook Air M2</option>
+                        <option value="windowschrome">Windows PC (Chrome)</option>
                         <option value="pixel8pro">Google Pixel 8 Pro</option>
                         <option value="realmec3">Realme C3</option>
                     </select>
@@ -96,10 +99,10 @@
         <div class="bg-gray-900 border border-gray-800 rounded-2xl shadow-2xl p-6 w-full max-w-sm transform scale-95 transition-transform duration-200" id="modalContent">
             <div class="flex items-center space-x-3 mb-4">
                 <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-purple-500"></div>
-                <h3 class="text-xl font-bold text-white">Spoofing Device & Proxy</h3>
+                <h3 class="text-xl font-bold text-white">Applying Fingerprint</h3>
             </div>
             <div id="modalMessage" class="text-gray-400 text-xs bg-gray-800/50 p-3 rounded-lg border border-gray-700 font-mono break-all">
-                Applying advanced browser fingerprints...
+                Spoofing device specs & routing proxy...
             </div>
         </div>
     </div>
@@ -111,8 +114,8 @@
                     <svg class="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8V7a4 4 0 00-8 0v4h8z"></path></svg>
                 </div>
             </div>
-            <h2 class="text-xl font-bold text-white">Advanced Fingerprint Spoofer</h2>
-            <p class="text-gray-400 text-xs mt-2 max-w-xs">Enter deviceinfo.me or any site to verify spoofed device attributes.</p>
+            <h2 class="text-xl font-bold text-white">Proxy Sandbox Active</h2>
+            <p class="text-gray-400 text-xs mt-2 max-w-xs">Test on deviceinfo.me to verify spoofed specs.</p>
         </div>
 
         <iframe id="browserFrame" sandbox="allow-scripts allow-same-origin allow-forms allow-popups" class="w-full h-full border-none hidden z-10 bg-white" src="about:blank"></iframe>
@@ -147,7 +150,7 @@
                 const deviceText = deviceSelect.options[deviceSelect.selectedIndex].text;
 
                 urlInput.value = formattedUrl;
-                modalMessage.innerHTML = `Target: <span class="text-white">${formattedUrl}</span><br>Device: <span class="text-purple-400">${deviceText}</span><br><br><span class="text-green-400 text-xs">⚡ Injecting fingerprint overrides...</span>`;
+                modalMessage.innerHTML = `Target: <span class="text-white">${formattedUrl}</span><br>Device: <span class="text-purple-400">${deviceText}</span><br><br><span class="text-green-400 text-xs">⚡ Spoofing device properties...</span>`;
                 
                 customModal.classList.remove('hidden');
                 setTimeout(() => {
