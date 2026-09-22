@@ -55,11 +55,16 @@ const deviceProfiles = {
 };
 
 app.use('/proxy', (req, res, next) => {
-    const targetUrl = req.query.url;
+    let targetUrl = req.query.url;
     const requestedCountry = req.query.country || 'AUTO';
     const requestedDevice = req.query.device || 'AUTO';
 
     if (!targetUrl) return res.status(400).send('URL is missing');
+
+    // Ensure protocol is present
+    if (!/^https?:\/\//i.test(targetUrl)) {
+        targetUrl = 'https://' + targetUrl;
+    }
 
     let selectedProxyUrl = null;
     let proxyCountryCode = 'US';
@@ -68,7 +73,7 @@ app.use('/proxy', (req, res, next) => {
         const proxyKeys = Object.keys(allProxies);
         const randomKey = proxyKeys[Math.floor(Math.random() * proxyKeys.length)];
         selectedProxyUrl = allProxies[randomKey];
-        proxyCountryCode = randomKey.startsWith('UK') ? 'GB' : (randomKey.startsWith('DE') ? 'DE' : 'US');
+        proxyCountryCode = randomKey.startsWith('UK') ? 'GB' : 'US';
     } else if (countryProxies[requestedCountry]) {
         const arr = countryProxies[requestedCountry];
         selectedProxyUrl = arr[Math.floor(Math.random() * arr.length)];
@@ -98,6 +103,8 @@ app.use('/proxy', (req, res, next) => {
         ws: true,
         agent: proxyAgent,
         selfHandleResponse: true,
+        proxyTimeout: 15000,
+        timeout: 15000,
         pathRewrite: { '^/proxy': '' },
         onProxyReq: function(proxyReq, req, res) {
             proxyReq.setHeader('User-Agent', selectedProfile.ua);
@@ -209,7 +216,9 @@ app.use('/proxy', (req, res, next) => {
         },
         onError: function(err, req, res) {
             console.error('Proxy Error:', err.message);
-            res.status(500).send(`Error from Proxy: ${err.message}`);
+            if (!res.headersSent) {
+                res.status(502).send(`<html><body style="background:#0b0f19;color:white;text-align:center;padding-top:50px;font-family:sans-serif;"><h2>Target Site Failed to Respond or Timeout</h2><p>Error: ${err.message}</p></body></html>`);
+            }
         }
     })(req, res, next);
 });
