@@ -40,20 +40,67 @@ const countryProxies = {
 
 // 📱 200+ COMPLETE DEVICE PROFILES ACROSS 20 BRANDS
 const deviceProfiles = {
+    // Apple iPhone Series
     'iphone15promax': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 15 Pro Max', ram: 8, cores: 6, width: 430, height: 932 },
     'iphone15pro': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 15 Pro', ram: 8, cores: 6, width: 393, height: 852 },
+    'iphone16': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 16', ram: 8, cores: 6, width: 393, height: 852 },
     'iphone14': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 14', ram: 6, cores: 6, width: 390, height: 844 },
+    'iphone14plus': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 14 Plus', ram: 6, cores: 6, width: 428, height: 926 },
     'iphone13': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 13', ram: 4, cores: 6, width: 390, height: 844 },
+    'iphone13pro': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.2 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 13 Pro', ram: 6, cores: 6, width: 390, height: 844 },
     'iphone12': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 12', ram: 4, cores: 6, width: 390, height: 844 },
     'iphone11': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 11', ram: 4, cores: 6, width: 414, height: 896 },
     'iphonese': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.5 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone SE', ram: 3, cores: 6, width: 375, height: 667 },
+
+    // Samsung Galaxy Series
     'galaxys24ultra': { ua: 'Mozilla/5.0 (Linux; Android 14; SM-S928B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'SM-S928B', ram: 12, cores: 8, width: 412, height: 915 },
     'galaxya55': { ua: 'Mozilla/5.0 (Linux; Android 14; SM-A556B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'SM-A556B', ram: 8, cores: 8, width: 412, height: 915 },
+    'galaxys23': { ua: 'Mozilla/5.0 (Linux; Android 13; SM-S911B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'SM-S911B', ram: 8, cores: 8, width: 360, height: 780 },
+    'galaxya15': { ua: 'Mozilla/5.0 (Linux; Android 14; SM-A155F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'SM-A155F', ram: 4, cores: 8, width: 360, height: 800 },
+    'galaxya34': { ua: 'Mozilla/5.0 (Linux; Android 13; SM-A346B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'SM-A346B', ram: 6, cores: 8, width: 412, height: 915 },
+    'galaxyzflip5': { ua: 'Mozilla/5.0 (Linux; Android 13; SM-F731B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'SM-F731B', ram: 8, cores: 8, width: 360, height: 851 },
+    'galaxym34': { ua: 'Mozilla/5.0 (Linux; Android 13; SM-M346B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'SM-M346B', ram: 6, cores: 8, width: 412, height: 915 },
+    'galaxya54': { ua: 'Mozilla/5.0 (Linux; Android 13; SM-A546B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'SM-A546B', ram: 8, cores: 8, width: 412, height: 915 },
+    'galaxys22': { ua: 'Mozilla/5.0 (Linux; Android 12; SM-S901B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'SM-S901B', ram: 8, cores: 8, width: 360, height: 780 },
+    'galaxya14': { ua: 'Mozilla/5.0 (Linux; Android 13; SM-A146P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'SM-A146P', ram: 4, cores: 8, width: 360, height: 800 },
+
+    // Xiaomi / Redmi Series
     'redminote15pro': { ua: 'Mozilla/5.0 (Linux; Android 14; Redmi Note 15 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'Redmi Note 15 Pro', ram: 8, cores: 8, width: 393, height: 873 },
+    'redminote14': { ua: 'Mozilla/5.0 (Linux; Android 14; Redmi Note 14) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'Redmi Note 14', ram: 8, cores: 8, width: 393, height: 873 },
+    'redminote13': { ua: 'Mozilla/5.0 (Linux; Android 13; Redmi Note 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'Redmi Note 13', ram: 6, cores: 8, width: 393, height: 851 },
+    'xiaomi14': { ua: 'Mozilla/5.0 (Linux; Android 14; Xiaomi 14) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'Xiaomi 14', ram: 12, cores: 8, width: 393, height: 873 },
+    'redmi13c': { ua: 'Mozilla/5.0 (Linux; Android 13; Redmi 13C) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'Redmi 13C', ram: 4, cores: 8, width: 393, height: 873 },
+    'redminote12': { ua: 'Mozilla/5.0 (Linux; Android 12; Redmi Note 12) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'Redmi Note 12', ram: 6, cores: 8, width: 393, height: 851 },
+    'redmia3': { ua: 'Mozilla/5.0 (Linux; Android 14; Redmi A3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'Redmi A3', ram: 3, cores: 8, width: 393, height: 873 },
+    'redmi12': { ua: 'Mozilla/5.0 (Linux; Android 13; Redmi 12) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'Redmi 12', ram: 4, cores: 8, width: 393, height: 873 },
+    'xiaomi13ultra': { ua: 'Mozilla/5.0 (Linux; Android 13; Xiaomi 13 Ultra) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'Xiaomi 13 Ultra', ram: 12, cores: 8, width: 393, height: 873 },
+    'redmik70': { ua: 'Mozilla/5.0 (Linux; Android 14; Redmi K70) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'Redmi K70', ram: 12, cores: 8, width: 393, height: 873 },
+
+    // Realme Series
     'realmec67': { ua: 'Mozilla/5.0 (Linux; Android 14; RMX3890) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'RMX3890', ram: 6, cores: 8, width: 393, height: 873 },
     'realmec3': { ua: 'Mozilla/5.0 (Linux; Android 10; RMX2020) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'RMX2020', ram: 3, cores: 8, width: 360, height: 780 },
+    'realmec55': { ua: 'Mozilla/5.0 (Linux; Android 13; RMX3710) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'RMX3710', ram: 6, cores: 8, width: 393, height: 873 },
+    'realme12pro': { ua: 'Mozilla/5.0 (Linux; Android 14; RMX3842) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'RMX3842', ram: 8, cores: 8, width: 393, height: 873 },
+    'realme11pro': { ua: 'Mozilla/5.0 (Linux; Android 13; RMX3771) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'RMX3771', ram: 8, cores: 8, width: 393, height: 873 },
+    'realmenarzo60': { ua: 'Mozilla/5.0 (Linux; Android 13; RMX3750) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'RMX3750', ram: 8, cores: 8, width: 393, height: 873 },
+    'realmegt5': { ua: 'Mozilla/5.0 (Linux; Android 13; RMX3820) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'RMX3820', ram: 12, cores: 8, width: 393, height: 873 },
+    'realmec53': { ua: 'Mozilla/5.0 (Linux; Android 13; RMX3760) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'RMX3760', ram: 4, cores: 8, width: 393, height: 873 },
+    'realme10': { ua: 'Mozilla/5.0 (Linux; Android 12; RMX3630) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'RMX3630', ram: 4, cores: 8, width: 393, height: 873 },
+    'realme9i': { ua: 'Mozilla/5.0 (Linux; Android 11; RMX3491) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'RMX3491', ram: 4, cores: 8, width: 393, height: 873 },
+
+    // OnePlus Series
     'oneplus12': { ua: 'Mozilla/5.0 (Linux; Android 14; CPH2581) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'CPH2581', ram: 12, cores: 8, width: 412, height: 915 },
-    'vivov30': { ua: 'Mozilla/5.0 (Linux; Android 14; V2318) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'V2318', ram: 8, cores: 8, width: 393, height: 873 },
+    'oneplus12r': { ua: 'Mozilla/5.0 (Linux; Android 14; CPH2611) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'CPH2611', ram: 8, cores: 8, width: 412, height: 915 },
+    'oneplus11r': { ua: 'Mozilla/5.0 (Linux; Android 13; CPH2487) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'CPH2487', ram: 8, cores: 8, width: 412, height: 915 },
+    'oneplusnordce3': { ua: 'Mozilla/5.0 (Linux; Android 13; CPH2467) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'CPH2467', ram: 8, cores: 8, width: 412, height: 915 },
+    'oneplusnord3': { ua: 'Mozilla/5.0 (Linux; Android 13; CPH2493) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'CPH2493', ram: 8, cores: 8, width: 412, height: 915 },
+    'oneplus10pro': { ua: 'Mozilla/5.0 (Linux; Android 12; NE2211) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'NE2211', ram: 8, cores: 8, width: 412, height: 915 },
+    'oneplusnordn30': { ua: 'Mozilla/5.0 (Linux; Android 13; CPH2515) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'CPH2515', ram: 8, cores: 8, width: 412, height: 915 },
+    'oneplusopen': { ua: 'Mozilla/5.0 (Linux; Android 13; CPH2551) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'CPH2551', ram: 16, cores: 8, width: 480, height: 956 },
+    'oneplus9rt': { ua: 'Mozilla/5.0 (Linux; Android 11; MT2111) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'MT2111', ram: 8, cores: 8, width: 393, height: 873 },
+    'oneplus8t': { ua: 'Mozilla/5.0 (Linux; Android 11; KB2001) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'KB2001', ram: 8, cores: 8, width: 393, height: 873 },
+
+    // Laptops, MacBooks & Google Pixel
     'macbookairm2': { ua: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15', platform: 'MacIntel', mobile: false, model: 'MacBook Air', ram: 16, cores: 8, width: 1440, height: 900 },
     'macbookpro16': { ua: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 14_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15', platform: 'MacIntel', mobile: false, model: 'MacBook Pro', ram: 32, cores: 12, width: 1728, height: 1117 },
     'windowschrome': { ua: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36', platform: 'Win32', mobile: false, model: 'Windows PC', ram: 16, cores: 12, width: 1920, height: 1080 },
@@ -160,20 +207,22 @@ app.use('/proxy', (req, res, next) => {
                             Object.defineProperty(window, 'innerWidth', { get: () => profile.width });
                             Object.defineProperty(window, 'innerHeight', { get: () => profile.height });
 
-                            // 🔗 FORCE ALL LINKS & POPUPS TO OPEN INSIDE SAME FRAME
+                            // 🔗 FORCE ALL LINKS & POPUPS TO OPEN INSIDE SAME FRAME (Without blocking any ads/CPM networks)
                             document.addEventListener('click', (e) => {
                                 const target = e.target.closest('a');
                                 if (target && target.href) {
                                     e.preventDefault();
                                     let href = target.getAttribute('href');
-                                    if (href.startsWith('/')) {
+                                    if (href && href.startsWith('/')) {
                                         const urlObj = new URL("${targetUrl}");
                                         href = urlObj.origin + href;
-                                    } else if (!href.startsWith('http')) {
+                                    } else if (href && !href.startsWith('http')) {
                                         const urlObj = new URL("${targetUrl}");
                                         href = urlObj.origin + '/' + href;
                                     }
-                                    window.location.href = '/proxy?url=' + encodeURIComponent(href) + '&country=${requestedCountry}&device=${requestedDevice}';
+                                    if (href) {
+                                        window.location.href = '/proxy?url=' + encodeURIComponent(href) + '&country=${requestedCountry}&device=${requestedDevice}';
+                                    }
                                 }
                             }, true);
 
@@ -217,7 +266,7 @@ app.use('/proxy', (req, res, next) => {
                         const urlObj = new URL(targetUrl);
                         redirectUrl = urlObj.origin + redirectUrl;
                     }
-                    proxyRes.headers['location'] = `/proxy?url=${encodeURIComponent(redirectUrl)}&country=${requestedCountry}&device=${requestedDevice}`;
+                    res.setHeader('location', `/proxy?url=${encodeURIComponent(redirectUrl)}&country=${requestedCountry}&device=${requestedDevice}`);
                 }
 
                 res.writeHead(proxyRes.statusCode);
