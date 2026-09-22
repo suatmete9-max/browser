@@ -38,92 +38,15 @@ const countryProxies = {
     'DE': [allProxies['DE1']]
 };
 
-// 📱 DETAILED DEVICE PROFILES (Matching DeviceInfo.me specifications)
+// 📱 HIGHLY DETAILED REALISTIC DEVICE PROFILES
 const deviceProfiles = {
-    'iphone15promax': {
-        ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Mobile/15E148 Safari/604.1',
-        platform: 'iPhone',
-        mobile: true,
-        model: 'iPhone 15 Pro Max',
-        osVersion: '17.1.0',
-        ram: 8,
-        cores: 6,
-        gpu: 'Apple GPU',
-        screenWidth: 430,
-        screenHeight: 932
-    },
-    'iphone13': {
-        ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1',
-        platform: 'iPhone',
-        mobile: true,
-        model: 'iPhone 13',
-        osVersion: '15.0.0',
-        ram: 4,
-        cores: 6,
-        gpu: 'Apple GPU',
-        screenWidth: 390,
-        screenHeight: 844
-    },
-    'samsunggalaxys24ultra': {
-        ua: 'Mozilla/5.0 (Linux; Android 14; SM-S928B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36',
-        platform: 'Linux armv8l',
-        mobile: true,
-        model: 'SM-S928B',
-        osVersion: '14.0.0',
-        ram: 12,
-        cores: 8,
-        gpu: 'Adreno (TM) 750',
-        screenWidth: 412,
-        screenHeight: 915
-    },
-    'realmec3': {
-        ua: 'Mozilla/5.0 (Linux; Android 10; RMX2020) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Mobile Safari/537.36',
-        platform: 'Linux armv8l',
-        mobile: true,
-        model: 'RMX2020',
-        osVersion: '10.0.0',
-        ram: 3,
-        cores: 8,
-        gpu: 'Mali-G52',
-        screenWidth: 360,
-        screenHeight: 780
-    },
-    'macbookairm2': {
-        ua: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15',
-        platform: 'MacIntel',
-        mobile: false,
-        model: 'MacBook Air',
-        osVersion: '13.4.0',
-        ram: 16,
-        cores: 8,
-        gpu: 'Apple M2',
-        screenWidth: 1440,
-        screenHeight: 900
-    },
-    'windowschrome': {
-        ua: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
-        platform: 'Win32',
-        mobile: false,
-        model: 'Windows PC',
-        osVersion: '10.0',
-        ram: 16,
-        cores: 12,
-        gpu: 'NVIDIA GeForce RTX 3060',
-        screenWidth: 1920,
-        screenHeight: 1080
-    },
-    'pixel8pro': {
-        ua: 'Mozilla/5.0 (Linux; Android 14; Pixel 8 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36',
-        platform: 'Linux armv8l',
-        mobile: true,
-        model: 'Pixel 8 Pro',
-        osVersion: '14.0.0',
-        ram: 12,
-        cores: 9,
-        gpu: 'Mali-G715',
-        screenWidth: 412,
-        screenHeight: 915
-    }
+    'iphone15promax': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 15 Pro Max', ram: 8, cores: 6, width: 430, height: 932, vendor: 'Apple Computer, Inc.' },
+    'iphone13': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 13', ram: 4, cores: 6, width: 390, height: 844, vendor: 'Apple Computer, Inc.' },
+    'galaxys24ultra': { ua: 'Mozilla/5.0 (Linux; Android 14; SM-S928B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'SM-S928B', ram: 12, cores: 8, width: 412, height: 915, vendor: 'Google Inc. (Qualcomm)' },
+    'realmec3': { ua: 'Mozilla/5.0 (Linux; Android 10; RMX2020) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'RMX2020', ram: 3, cores: 8, width: 360, height: 780, vendor: 'ARM' },
+    'macbookairm2': { ua: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15', platform: 'MacIntel', mobile: false, model: 'MacBook Air', ram: 16, cores: 8, width: 1440, height: 900, vendor: 'Apple Inc.' },
+    'windowschrome': { ua: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36', platform: 'Win32', mobile: false, model: 'Windows PC', ram: 16, cores: 12, width: 1920, height: 1080, vendor: 'Google Inc. (NVIDIA)' },
+    'pixel8pro': { ua: 'Mozilla/5.0 (Linux; Android 14; Pixel 8 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'Pixel 8 Pro', ram: 12, cores: 9, width: 412, height: 915, vendor: 'Google Inc.' }
 };
 
 app.use('/proxy', (req, res, next) => {
@@ -200,8 +123,9 @@ app.use('/proxy', (req, res, next) => {
                             mobile: ${selectedProfile.mobile},
                             ram: ${selectedProfile.ram},
                             cores: ${selectedProfile.cores},
-                            width: ${selectedProfile.screenWidth},
-                            height: ${selectedProfile.screenHeight}
+                            width: ${selectedProfile.width},
+                            height: ${selectedProfile.height},
+                            vendor: "${selectedProfile.vendor}"
                         };
 
                         Object.defineProperty(navigator, 'userAgent', { get: () => profile.ua });
@@ -209,6 +133,7 @@ app.use('/proxy', (req, res, next) => {
                         Object.defineProperty(navigator, 'maxTouchPoints', { get: () => profile.mobile ? 5 : 0 });
                         Object.defineProperty(navigator, 'deviceMemory', { get: () => profile.ram });
                         Object.defineProperty(navigator, 'hardwareConcurrency', { get: () => profile.cores });
+                        Object.defineProperty(navigator, 'vendor', { get: () => profile.vendor });
 
                         if (navigator.userAgentData) {
                             Object.defineProperty(navigator, 'userAgentData', {
