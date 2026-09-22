@@ -207,10 +207,13 @@ app.use('/proxy', (req, res, next) => {
                             Object.defineProperty(window, 'innerWidth', { get: () => profile.width });
                             Object.defineProperty(window, 'innerHeight', { get: () => profile.height });
 
-                            // 🔗 FORCE ALL LINKS & POPUPS TO OPEN INSIDE SAME FRAME (Without blocking any ads/CPM networks)
+                            // ⚡ SMART LOOP-PREVENTER & FRAME FIXER (Stops white-screen redirect loops while allowing all CPM ads)
                             document.addEventListener('click', (e) => {
                                 const target = e.target.closest('a');
                                 if (target && target.href) {
+                                    if (target.href.includes('profitableratecpm') || target.href === window.location.href) {
+                                        return; // Let CPM ads and normal links work naturally without freezing
+                                    }
                                     e.preventDefault();
                                     let href = target.getAttribute('href');
                                     if (href && href.startsWith('/')) {
@@ -225,18 +228,6 @@ app.use('/proxy', (req, res, next) => {
                                     }
                                 }
                             }, true);
-
-                            window.open = function(url) {
-                                if (url) {
-                                    let finalUrl = url;
-                                    if (url.startsWith('/')) {
-                                        const urlObj = new URL("${targetUrl}");
-                                        finalUrl = urlObj.origin + url;
-                                    }
-                                    window.location.href = '/proxy?url=' + encodeURIComponent(finalUrl) + '&country=${requestedCountry}&device=${requestedDevice}';
-                                }
-                                return window;
-                            };
                         } catch(err) {}
                     })();
                     </script>
