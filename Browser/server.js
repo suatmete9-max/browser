@@ -207,27 +207,32 @@ app.use('/proxy', (req, res, next) => {
                             Object.defineProperty(window, 'innerWidth', { get: () => profile.width });
                             Object.defineProperty(window, 'innerHeight', { get: () => profile.height });
 
-                            // ⚡ SMART LOOP-PREVENTER & FRAME FIXER (Stops white-screen redirect loops while allowing all CPM ads)
-                            document.addEventListener('click', (e) => {
+                            // 🔗 BULLETPROOF SAME-FRAME LINK & POPUP INTERCEPTOR (Forces all clicks & window.open inside iframe)
+                            window.addEventListener('click', (e) => {
                                 const target = e.target.closest('a');
                                 if (target && target.href) {
-                                    if (target.href.includes('profitableratecpm') || target.href === window.location.href) {
-                                        return; // Let CPM ads and normal links work naturally without freezing
-                                    }
+                                    // Ignore javascript: or anchor jumps
+                                    if (target.href.startsWith('javascript:') || target.href.includes('#')) return;
+                                    
                                     e.preventDefault();
+                                    e.stopPropagation();
+                                    
                                     let href = target.getAttribute('href');
-                                    if (href && href.startsWith('/')) {
-                                        const urlObj = new URL("${targetUrl}");
-                                        href = urlObj.origin + href;
-                                    } else if (href && !href.startsWith('http')) {
-                                        const urlObj = new URL("${targetUrl}");
-                                        href = urlObj.origin + '/' + href;
-                                    }
                                     if (href) {
-                                        window.location.href = '/proxy?url=' + encodeURIComponent(href) + '&country=${requestedCountry}&device=${requestedDevice}';
+                                        let absoluteUrl = new URL(href, window.location.href).href;
+                                        window.location.href = '/proxy?url=' + encodeURIComponent(absoluteUrl) + '&country=${requestedCountry}&device=${requestedDevice}';
                                     }
+                                }, true);
+
+                            const originalOpen = window.open;
+                            window.open = function(url, name, specs) {
+                                if (url) {
+                                    let absoluteUrl = new URL(url, window.location.href).href;
+                                    window.location.href = '/proxy?url=' + encodeURIComponent(absoluteUrl) + '&country=${requestedCountry}&device=${requestedDevice}';
+                                    return window;
                                 }
-                            }, true);
+                                return originalOpen.apply(this, arguments);
+                            };
                         } catch(err) {}
                     })();
                     </script>
