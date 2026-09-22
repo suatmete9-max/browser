@@ -44,23 +44,12 @@ const deviceProfiles = {
     'iphone15pro': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 15 Pro', ram: 8, cores: 6, width: 393, height: 852 },
     'iphone16': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 16', ram: 8, cores: 6, width: 393, height: 852 },
     'iphone14': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 14', ram: 6, cores: 6, width: 390, height: 844 },
-    'iphone14plus': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 14 Plus', ram: 6, cores: 6, width: 428, height: 926 },
     'iphone13': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 13', ram: 4, cores: 6, width: 390, height: 844 },
-    'iphone13pro': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.2 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 13 Pro', ram: 6, cores: 6, width: 390, height: 844 },
-    'iphone12': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 12', ram: 4, cores: 6, width: 390, height: 844 },
-    'iphone11': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 11', ram: 4, cores: 6, width: 414, height: 896 },
-    'iphonese': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.5 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone SE', ram: 3, cores: 6, width: 375, height: 667 },
     'galaxys24ultra': { ua: 'Mozilla/5.0 (Linux; Android 14; SM-S928B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'SM-S928B', ram: 12, cores: 8, width: 412, height: 915 },
     'galaxya55': { ua: 'Mozilla/5.0 (Linux; Android 14; SM-A556B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'SM-A556B', ram: 8, cores: 8, width: 412, height: 915 },
-    'galaxys23': { ua: 'Mozilla/5.0 (Linux; Android 13; SM-S911B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'SM-S911B', ram: 8, cores: 8, width: 360, height: 780 },
-    'galaxya15': { ua: 'Mozilla/5.0 (Linux; Android 14; SM-A155F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'SM-A155F', ram: 4, cores: 8, width: 360, height: 800 },
     'redminote15pro': { ua: 'Mozilla/5.0 (Linux; Android 14; Redmi Note 15 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'Redmi Note 15 Pro', ram: 8, cores: 8, width: 393, height: 873 },
     'realmec67': { ua: 'Mozilla/5.0 (Linux; Android 14; RMX3890) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'RMX3890', ram: 6, cores: 8, width: 393, height: 873 },
-    'realmec3': { ua: 'Mozilla/5.0 (Linux; Android 10; RMX2020) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'RMX2020', ram: 3, cores: 8, width: 360, height: 780 },
-    'oneplus12': { ua: 'Mozilla/5.0 (Linux; Android 14; CPH2581) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'CPH2581', ram: 12, cores: 8, width: 412, height: 915 },
-    'vivov30': { ua: 'Mozilla/5.0 (Linux; Android 14; V2318) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'V2318', ram: 8, cores: 8, width: 393, height: 873 },
     'macbookairm2': { ua: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15', platform: 'MacIntel', mobile: false, model: 'MacBook Air', ram: 16, cores: 8, width: 1440, height: 900 },
-    'macbookpro16': { ua: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 14_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15', platform: 'MacIntel', mobile: false, model: 'MacBook Pro', ram: 32, cores: 12, width: 1728, height: 1117 },
     'windowschrome': { ua: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36', platform: 'Win32', mobile: false, model: 'Windows PC', ram: 16, cores: 12, width: 1920, height: 1080 },
     'pixel8pro': { ua: 'Mozilla/5.0 (Linux; Android 14; Pixel 8 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'Pixel 8 Pro', ram: 12, cores: 9, width: 412, height: 915 }
 };
@@ -73,17 +62,23 @@ app.use('/proxy', (req, res, next) => {
     if (!targetUrl) return res.status(400).send('URL is missing');
 
     let selectedProxyUrl = null;
+    let proxyCountryCode = 'US';
+
     if (requestedCountry === 'AUTO') {
         const proxyKeys = Object.keys(allProxies);
         const randomKey = proxyKeys[Math.floor(Math.random() * proxyKeys.length)];
         selectedProxyUrl = allProxies[randomKey];
+        proxyCountryCode = randomKey.startsWith('UK') ? 'GB' : (randomKey.startsWith('DE') ? 'DE' : 'US');
     } else if (countryProxies[requestedCountry]) {
         const arr = countryProxies[requestedCountry];
         selectedProxyUrl = arr[Math.floor(Math.random() * arr.length)];
+        proxyCountryCode = requestedCountry.startsWith('UK') ? 'GB' : 'US';
     } else if (allProxies[requestedCountry]) {
         selectedProxyUrl = allProxies[requestedCountry];
+        proxyCountryCode = requestedCountry.startsWith('UK') ? 'GB' : 'US';
     } else {
         selectedProxyUrl = allProxies['US1'];
+        proxyCountryCode = 'US';
     }
 
     const deviceKeys = Object.keys(deviceProfiles);
@@ -104,6 +99,11 @@ app.use('/proxy', (req, res, next) => {
         agent: proxyAgent,
         selfHandleResponse: true,
         pathRewrite: { '^/proxy': '' },
+        onProxyReq: function(proxyReq, req, res) {
+            proxyReq.setHeader('User-Agent', selectedProfile.ua);
+            proxyReq.setHeader('Accept-Language', proxyCountryCode === 'GB' ? 'en-GB,en;q=0.9' : 'en-US,en;q=0.9');
+            proxyReq.setHeader('CF-IPCountry', proxyCountryCode);
+        },
         onProxyRes: function (proxyRes, req, res) {
             let body = [];
 
@@ -140,7 +140,8 @@ app.use('/proxy', (req, res, next) => {
                             ram: ${selectedProfile.ram},
                             cores: ${selectedProfile.cores},
                             width: ${selectedProfile.width},
-                            height: ${selectedProfile.height}
+                            height: ${selectedProfile.height},
+                            lang: "${proxyCountryCode === 'GB' ? 'en-GB' : 'en-US'}"
                         };
 
                         try {
@@ -149,6 +150,8 @@ app.use('/proxy', (req, res, next) => {
                             Object.defineProperty(navigator, 'maxTouchPoints', { get: () => profile.mobile ? 5 : 0 });
                             Object.defineProperty(navigator, 'deviceMemory', { get: () => profile.ram });
                             Object.defineProperty(navigator, 'hardwareConcurrency', { get: () => profile.cores });
+                            Object.defineProperty(navigator, 'language', { get: () => profile.lang });
+                            Object.defineProperty(navigator, 'languages', { get: () => [profile.lang, 'en'] });
 
                             if (navigator.userAgentData) {
                                 Object.defineProperty(navigator, 'userAgentData', {
@@ -165,7 +168,6 @@ app.use('/proxy', (req, res, next) => {
                             Object.defineProperty(window, 'innerWidth', { get: () => profile.width });
                             Object.defineProperty(window, 'innerHeight', { get: () => profile.height });
 
-                            // ⚡ LIGHTNING-FAST SAFE INTERCEPTOR (Allows all CPM ads & scripts to load instantly without white page)
                             window.addEventListener('DOMContentLoaded', () => {
                                 document.querySelectorAll('a[target="_blank"]').forEach(el => el.removeAttribute('target'));
                             });
