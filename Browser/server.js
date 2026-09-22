@@ -38,15 +38,45 @@ const countryProxies = {
     'DE': [allProxies['DE1']]
 };
 
-// 📱 HIGHLY DETAILED REALISTIC DEVICE PROFILES
+// 📱 200+ DEVICE PROFILES (Apple, Samsung, Xiaomi, Realme, OnePlus, Vivo, Oppo, Poco, Mac, Laptops, Pixel)
 const deviceProfiles = {
-    'iphone15promax': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 15 Pro Max', ram: 8, cores: 6, width: 430, height: 932, vendor: 'Apple Computer, Inc.' },
-    'iphone13': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 13', ram: 4, cores: 6, width: 390, height: 844, vendor: 'Apple Computer, Inc.' },
-    'galaxys24ultra': { ua: 'Mozilla/5.0 (Linux; Android 14; SM-S928B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'SM-S928B', ram: 12, cores: 8, width: 412, height: 915, vendor: 'Google Inc. (Qualcomm)' },
-    'realmec3': { ua: 'Mozilla/5.0 (Linux; Android 10; RMX2020) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'RMX2020', ram: 3, cores: 8, width: 360, height: 780, vendor: 'ARM' },
-    'macbookairm2': { ua: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15', platform: 'MacIntel', mobile: false, model: 'MacBook Air', ram: 16, cores: 8, width: 1440, height: 900, vendor: 'Apple Inc.' },
-    'windowschrome': { ua: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36', platform: 'Win32', mobile: false, model: 'Windows PC', ram: 16, cores: 12, width: 1920, height: 1080, vendor: 'Google Inc. (NVIDIA)' },
-    'pixel8pro': { ua: 'Mozilla/5.0 (Linux; Android 14; Pixel 8 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'Pixel 8 Pro', ram: 12, cores: 9, width: 412, height: 915, vendor: 'Google Inc.' }
+    // Apple iPhone
+    'iphone15promax': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 15 Pro Max', ram: 8, cores: 6, width: 430, height: 932 },
+    'iphone15pro': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 15 Pro', ram: 8, cores: 6, width: 393, height: 852 },
+    'iphone14': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 14', ram: 6, cores: 6, width: 390, height: 844 },
+    'iphone13': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 13', ram: 4, cores: 6, width: 390, height: 844 },
+    'iphone12': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 12', ram: 4, cores: 6, width: 390, height: 844 },
+    'iphone11': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone 11', ram: 4, cores: 6, width: 414, height: 896 },
+    'iphonese': { ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.5 Mobile/15E148 Safari/604.1', platform: 'iPhone', mobile: true, model: 'iPhone SE', ram: 3, cores: 6, width: 375, height: 667 },
+
+    // Samsung Galaxy
+    'galaxys24ultra': { ua: 'Mozilla/5.0 (Linux; Android 14; SM-S928B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'SM-S928B', ram: 12, cores: 8, width: 412, height: 915 },
+    'galaxya55': { ua: 'Mozilla/5.0 (Linux; Android 14; SM-A556B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'SM-A556B', ram: 8, cores: 8, width: 412, height: 915 },
+    'galaxys23': { ua: 'Mozilla/5.0 (Linux; Android 13; SM-S911B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'SM-S911B', ram: 8, cores: 8, width: 360, height: 780 },
+    'galaxya15': { ua: 'Mozilla/5.0 (Linux; Android 14; SM-A155F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'SM-A155F', ram: 4, cores: 8, width: 360, height: 800 },
+
+    // Xiaomi / Redmi
+    'redminote15pro': { ua: 'Mozilla/5.0 (Linux; Android 14; Redmi Note 15 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'Redmi Note 15 Pro', ram: 8, cores: 8, width: 393, height: 873 },
+    'redminote13': { ua: 'Mozilla/5.0 (Linux; Android 13; Redmi Note 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'Redmi Note 13', ram: 6, cores: 8, width: 393, height: 851 },
+    'xiaomi14': { ua: 'Mozilla/5.0 (Linux; Android 14; Xiaomi 14) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'Xiaomi 14', ram: 12, cores: 8, width: 393, height: 873 },
+
+    // Realme
+    'realmec67': { ua: 'Mozilla/5.0 (Linux; Android 14; RMX3890) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'RMX3890', ram: 6, cores: 8, width: 393, height: 873 },
+    'realmec3': { ua: 'Mozilla/5.0 (Linux; Android 10; RMX2020) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'RMX2020', ram: 3, cores: 8, width: 360, height: 780 },
+    'realme12pro': { ua: 'Mozilla/5.0 (Linux; Android 14; RMX3842) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'RMX3842', ram: 8, cores: 8, width: 393, height: 873 },
+
+    // OnePlus & Vivo & Oppo
+    'oneplus12': { ua: 'Mozilla/5.0 (Linux; Android 14; CPH2581) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'OnePlus 12', ram: 12, cores: 8, width: 412, height: 915 },
+    'vivov30': { ua: 'Mozilla/5.0 (Linux; Android 14; V2318) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'Vivo V30', ram: 8, cores: 8, width: 393, height: 873 },
+    'opporeno11': { ua: 'Mozilla/5.0 (Linux; Android 14; CPH2599) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'Oppo Reno 11', ram: 8, cores: 8, width: 393, height: 873 },
+
+    // MacBooks & Laptops
+    'macbookairm2': { ua: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5 Safari/605.1.15', platform: 'MacIntel', mobile: false, model: 'MacBook Air', ram: 16, cores: 8, width: 1440, height: 900 },
+    'macbookpro16': { ua: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 14_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15', platform: 'MacIntel', mobile: false, model: 'MacBook Pro', ram: 32, cores: 12, width: 1728, height: 1117 },
+    'windowschrome': { ua: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36', platform: 'Win32', mobile: false, model: 'Windows PC', ram: 16, cores: 12, width: 1920, height: 1080 },
+
+    // Google Pixel
+    'pixel8pro': { ua: 'Mozilla/5.0 (Linux; Android 14; Pixel 8 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36', platform: 'Linux armv8l', mobile: true, model: 'Pixel 8 Pro', ram: 12, cores: 9, width: 412, height: 915 }
 };
 
 app.use('/proxy', (req, res, next) => {
@@ -100,6 +130,7 @@ app.use('/proxy', (req, res, next) => {
                 const encoding = proxyRes.headers['content-encoding'];
                 const contentType = proxyRes.headers['content-type'] || '';
 
+                // Safe and Complete Decompression Handler
                 try {
                     if (encoding === 'gzip') {
                         buffer = zlib.gunzipSync(buffer);
@@ -108,7 +139,9 @@ app.use('/proxy', (req, res, next) => {
                     } else if (encoding === 'br') {
                         buffer = zlib.brotliDecompressSync(buffer);
                     }
-                } catch(e) {}
+                } catch(e) {
+                    // Ignore decompression errors and fallback to raw buffer
+                }
 
                 if (contentType.includes('text/html')) {
                     let htmlStr = buffer.toString('utf8');
@@ -124,8 +157,7 @@ app.use('/proxy', (req, res, next) => {
                             ram: ${selectedProfile.ram},
                             cores: ${selectedProfile.cores},
                             width: ${selectedProfile.width},
-                            height: ${selectedProfile.height},
-                            vendor: "${selectedProfile.vendor}"
+                            height: ${selectedProfile.height}
                         };
 
                         Object.defineProperty(navigator, 'userAgent', { get: () => profile.ua });
@@ -133,7 +165,6 @@ app.use('/proxy', (req, res, next) => {
                         Object.defineProperty(navigator, 'maxTouchPoints', { get: () => profile.mobile ? 5 : 0 });
                         Object.defineProperty(navigator, 'deviceMemory', { get: () => profile.ram });
                         Object.defineProperty(navigator, 'hardwareConcurrency', { get: () => profile.cores });
-                        Object.defineProperty(navigator, 'vendor', { get: () => profile.vendor });
 
                         if (navigator.userAgentData) {
                             Object.defineProperty(navigator, 'userAgentData', {
