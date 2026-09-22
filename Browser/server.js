@@ -165,42 +165,10 @@ app.use('/proxy', (req, res, next) => {
                             Object.defineProperty(window, 'innerWidth', { get: () => profile.width });
                             Object.defineProperty(window, 'innerHeight', { get: () => profile.height });
 
-                            // 🛡️ PERMANENT SAME-FRAME DOM MUTATION & WINDOW.OPEN INTERCEPTOR
-                            function forceSameFrame() {
-                                document.querySelectorAll('a').forEach(el => {
-                                    if (el.getAttribute('target') === '_blank' || el.target === '_blank') {
-                                        el.removeAttribute('target');
-                                    }
-                                });
-                            }
-
-                            const observer = new MutationObserver(forceSameFrame);
+                            // ⚡ LIGHTNING-FAST SAFE INTERCEPTOR (Allows all CPM ads & scripts to load instantly without white page)
                             window.addEventListener('DOMContentLoaded', () => {
-                                forceSameFrame();
-                                observer.observe(document.body, { childList: true, subtree: true });
+                                document.querySelectorAll('a[target="_blank"]').forEach(el => el.removeAttribute('target'));
                             });
-
-                            document.addEventListener('click', (e) => {
-                                const target = e.target.closest('a');
-                                if (target && target.href) {
-                                    if (target.href.startsWith('javascript:') || target.href.includes('#')) return;
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                    let href = target.getAttribute('href');
-                                    if (href) {
-                                        let absoluteUrl = new URL(href, window.location.href).href;
-                                        window.location.href = '/proxy?url=' + encodeURIComponent(absoluteUrl) + '&country=${requestedCountry}&device=${requestedDevice}';
-                                    }
-                                }
-                            }, true);
-
-                            window.open = function(url) {
-                                if (url) {
-                                    let absoluteUrl = new URL(url, window.location.href).href;
-                                    window.location.href = '/proxy?url=' + encodeURIComponent(absoluteUrl) + '&country=${requestedCountry}&device=${requestedDevice}';
-                                }
-                                return window;
-                            };
                         } catch(err) {}
                     })();
                     </script>
