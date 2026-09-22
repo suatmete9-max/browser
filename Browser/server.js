@@ -61,7 +61,6 @@ app.use('/proxy', (req, res, next) => {
 
     if (!targetUrl) return res.status(400).send('URL is missing');
 
-    // Ensure protocol is present
     if (!/^https?:\/\//i.test(targetUrl)) {
         targetUrl = 'https://' + targetUrl;
     }
@@ -103,14 +102,9 @@ app.use('/proxy', (req, res, next) => {
         ws: true,
         agent: proxyAgent,
         selfHandleResponse: true,
-        proxyTimeout: 15000,
-        timeout: 15000,
+        proxyTimeout: 20000,
+        timeout: 20000,
         pathRewrite: { '^/proxy': '' },
-        onProxyReq: function(proxyReq, req, res) {
-            proxyReq.setHeader('User-Agent', selectedProfile.ua);
-            proxyReq.setHeader('Accept-Language', proxyCountryCode === 'GB' ? 'en-GB,en;q=0.9' : 'en-US,en;q=0.9');
-            proxyReq.setHeader('CF-IPCountry', proxyCountryCode);
-        },
         onProxyRes: function (proxyRes, req, res) {
             let body = [];
 
